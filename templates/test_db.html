@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}题库{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block body %}
+    <div class="container mt-3">
+        <form class="form-inline" role="search" action="/test_db" method="get">
+            <div class="form-group">
+                <input name="key" class="form-control mr-sm-2" type="text" placeholder="按名称/编号搜索题目">
+            </div>
+        </form>
+    <br>
+        <div class="card">
+            <div class="card-body">
+                <div class="container mt-3">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>题目编号</th>
+                            <th>题目名称</th>
+                            <th>难度星级🌟</th>
+                            <th>AC率</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for test in tests %}
+                            <tr class="{{ test.color }}">
+                                <td>{{ test.test_id }}</td>
+                                <td><a href="/test/{{ test.test_id }}">{{ test.test_name }}</a></td>
+                                <td>{{ test.difficulty }}</td>
+                                <td>{{ test.ac_rate }}</td>
+                                <td>{{ test.status }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

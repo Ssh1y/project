@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}上传题目{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block body %}
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-body">
+                <form action="/upload_test" method="post" enctype="multipart/form-data">
+                    <div class="mb-3 mt-3">
+                        <label for="test_name">问题名称</label>
+                        <input type="text" class="form-control" id="test_name" placeholder="请输入问题名称..."
+                               name="test_name"
+                               required>
+                        <div class="invalid-feedback">请输入问题名称！</div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="test_desc">问题描述</label>
+                        <textarea type="text" class="form-control" id="test_desc" placeholder="请输入问题描述..."
+                                  name="test_desc" required
+                                  style="display: inline-block; line-height: 1.5;height: 150px;"></textarea>
+                        <div class="invalid-feedback">请输入问题描述！</div>
+                    </div>
+                    <label for="sel1" class="form-label">题目难度：</label>
+                    <select class="form-select" id="sel1" name="new_test_difficulty">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <div class="mb-3 mt-3">
+                        <label for="input_file">文件输入</label>
+                        <input type="file" id="input_file" name="input_file" required>
+                        <p class="text-muted">上传一个表示正确io状态的json文件，<a
+                                href="{{ url_for('static', filename="source/example.json.zip") }}">示例下载</a></p>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" style="float: right;">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}注册{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block body %}
+    <div class="container mt-3">
+        <h2>请输入登录用户名</h2>
+        <form action="/register" method="post">
+            <div class="form-floating mb-3 mt-3">
+                <textarea class="form-control" id="username" name="username" placeholder="请输入登录名"></textarea>
+                <label for="username">用户名</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+                <textarea class="form-control" id="dev_name" name="dev_name"
+                          placeholder="请输入绑定的设备地址"></textarea>
+                <label for="dev_name">设备地址</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+                <textarea class="form-control" id="device_ip" name="device_ip"
+                          placeholder="请输入设备的ip"></textarea>
+                <label for="device_ip">设备ip</label>
+            </div>
+            <small>未注册的账号和设备将自动注册，一个设备只能被一个用户绑定，用户可以更换绑定设备</small>
+            <p class="text-danger">{{ msg }}</p>
+            <button type="submit" class="btn btn-primary" style="float: right;">提交</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}帮助{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block body %}
+    <div class="container mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">1、关于</h5>
+                <p class="card-text">
+                    本站是基于python的
+                    <mark>flask</mark>
+                    框架，前端采用bootstrap5框架编写搭建
+                </p>
+            </div>
+        </div>
+        </br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">2、注册</h5>
+                <p class="card-text">
+                    由于本站设定，一个用户绑定一个设备。</br></br>
+                    每次登陆需绑定设备。若首次登陆，输入用户名和登陆设备后自动注册。登陆用户名任意，登陆设备地址为板子的mac地址，例如：
+                    <mark>Ssh1y/ab1234</mark>
+                    </br></br>
+                    ⚠️ 一个用户只能绑定一个设备，一个设备只能被一个用户绑定。
+                    </br></br>
+                    若忘记绑定的用户名，请联系网站管理员：<code>909425629@qq.com</code>
+                </p>
+            </div>
+        </div>
+        </br>
+        <div class="text-center" style="margin-bottom:0">
+            <p>Copyright © 2022 Good Ssh1y - All Rights Reserved.</p>
+        </div>
+    </div>
+{% endblock %}

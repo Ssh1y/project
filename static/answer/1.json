@@ -1,0 +1,10 @@
+{
+    "id":int,
+    "precision":float,   //判题精度
+    "field":[{
+        "timestamp":int, //时间点
+        "io_num": int,   //检测的io口
+        "state": int,    //io口对应状态
+        "type":int       //逻辑状态
+    }]
+}
